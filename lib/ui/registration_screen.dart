@@ -237,13 +237,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ),
                         Wrap(
                           children: [
-                            Text(
-                              "Don't have an account?",
-                              style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xFFBBBBBB),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (context) => UserForm()));
+                              },
+                              child: Text(
+                                "skip",
+                                style: TextStyle(
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFBBBBBB),
+                                ),
                               ),
+                            ),
+                            SizedBox(
+                              width: 10,
                             ),
                             GestureDetector(
                               child: Text(
@@ -260,7 +271,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                     CupertinoPageRoute(
                                         builder: (context) => LoginScreen()));
                               },
-                            )
+                            ),
                           ],
                         )
                       ],
